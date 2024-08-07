@@ -1,0 +1,43 @@
+{
+  "name": "@mvbtst/comunica-lt-test-conf",
+  "version": "0.0.1",
+  "description": "A test configuration for @comunica/query-sparql-link-traversal-solid.",
+  "author": "Martin Vanbrabant",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvanbrab/comunica-lt-test-conf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mvanbrab/comunica-lt-test-conf/issues"
+  },
+  "homepage": "https://github.com/mvanbrab/comunica-lt-test-conf#readme",
+  "lsd:module": true,
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build:engine": "comunica-compile-config config/config-default.json > engine-default.js",
+    "build:lib": "tsc",
+    "build": "npm run build:lib && npm run build:engine",
+    "postinstall": "npm run build"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index",
+  "browser": {
+    "./lib/index.js": "./lib/index-browser.js"
+  },
+  "files": [
+    "components",
+    "config",
+    "bin/**/*.d.ts",
+    "bin/**/*.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.js",
+    "engine-default.js"
+  ],
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@comunica/query-sparql-link-traversal-solid": "^0.4.1"
+  }
+}
