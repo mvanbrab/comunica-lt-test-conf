@@ -1,6 +1,6 @@
 {
   "name": "@mvbtst/comunica-lt-test-conf",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A test configuration for @comunica/query-sparql-link-traversal-solid.",
   "author": "Martin Vanbrabant",
   "license": "MIT",
@@ -17,8 +17,7 @@
     "prepublishOnly": "npm run build",
     "build:engine": "comunica-compile-config config/config-default.json > engine-default.js",
     "build:lib": "tsc",
-    "build": "npm run build:lib && npm run build:engine",
-    "postinstall": "npm run build"
+    "build": "npm run build:lib && npm run build:engine"
   },
   "main": "lib/index.js",
   "types": "lib/index",
